@@ -38,7 +38,7 @@ Build a complete website for a recipe company called Foodfy.
 See it working live: https://foodfy-cid.netlify.app/
 
 <p>
-  <img alt="third-html" src="./assets/third-html.png"></img>
+  <img alt="foodfy-modal" src="./assets/modal-foodfy.png"></img>
 </p>
 
 ## :memo: License
