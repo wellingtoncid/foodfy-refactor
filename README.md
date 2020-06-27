@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  Building Foodfy
+  Refatoring Foodfy
 </h3>
 
 <blockquote align="center">“Foodfy, Master Challenge of Bootcamp LaunchBase”</blockquote>
@@ -27,19 +27,11 @@
 
 ## :rocket: Challenges
 
-- Building Foodfy
+- Refatoring Foodfy
 
 Build a complete website for a recipe company called Foodfy.
   
-<p>
-  <img alt="foodfy-mockup" src="./assets/mockup.png"></img>
-</p>
 
-See it working live: https://foodfy-cid.netlify.app/
-
-<p>
-  <img alt="foodfy-modal" src="./assets/modal-foodfy.png"></img>
-</p>
 
 ## :memo: License
 
