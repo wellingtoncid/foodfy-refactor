@@ -1,0 +1,47 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+    <title>Receitas Foodfy</title>
+    <link rel="stylesheet" href="/modal.css">
+{% endblock %}
+
+{% block content %}
+ 
+    <section class="cards">
+        {% for item in items%}
+        <div class="card"> 
+            <div class="card-image">
+                <img src="{{item.image}}" alt="Image {{item.title}}">
+            </div>
+            <div class="card-title">
+                <h1>{{item.title}}</h1>
+            </div>
+            <div class="card-author">
+                <p>{{item.title}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-img">
+                <img src="" alt="">
+            </div>
+            <div class="modal-recipe">
+                <h1></h1>
+            </div>
+            <div class="modal-author">
+                <p></p>
+            </div>
+            <div>
+                <p class="close-modal">Fechar modal</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    
+{% endblock %}
