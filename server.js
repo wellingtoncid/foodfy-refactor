@@ -26,10 +26,9 @@ server.get('/recipes', function (req, res) {
 })
 
 server.get("/recipe/:index", function (req, res) {
-    
     const recipeIndex = req.params.index
 
-    const recipe = data.recipes[recipeIndex]  // Array de receitas carregadas do data.js
+    const recipe = recipes[recipeIndex]  // Array de receitas carregadas do data.js
 
     console.log(recipes[recipeIndex]);
 
@@ -37,7 +36,7 @@ server.get("/recipe/:index", function (req, res) {
         return res.render ('notfound')
     }
 
-    return res.render ('recipe', { item: recipe })
+    return res.render('recipe', { item: recipes[recipeIndex] })
 })
 
 server.use(function (req, res) {
