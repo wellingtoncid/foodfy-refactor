@@ -30,6 +30,10 @@
 - Refatoring Foodfy
 
 Build a complete website for a recipe company called Foodfy.
+
+<p>
+  <img alt="foodfy-refatored" src="/public/assets/foodfy.gif"></img>
+</p>
   
 https://github.com/wellingtoncid/foodfy/blob/master/public/assets/foodfy.webm
 
