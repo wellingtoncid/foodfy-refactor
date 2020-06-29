@@ -2,7 +2,7 @@
 
 {% block head %}
     <title>{{item.title}} Foodfy</title>
-    <link rel="stylesheet" href="recipe.css">
+    <link rel="stylesheet" href="/recipe.css">
 {% endblock %}
 
 {% block content %}
@@ -17,32 +17,35 @@
         <h1>{{item.title}}</h1>
     </div>
     <div class="recipe_author">
-        <p>{{item.author}}</p>
+        <p>por {{item.author}}</p>
     </div>
     
-    <div class="recipe_ingredients">
-        <h2 id="first">Ingredientes</h2> <span><button>Esconder</button></span> 
-        <ul class="hideable">
-            
-            <li>{{item.ingredients}}</li>
-              
-        </ul>
-    </div>
-
-    <div class="recipe_preparation">
-        <h2>Modo de preparo</h2><button>Esconder</button>
-        <div class="hideable">
-            <ol>
-                <li>{{item.preparation}}</li>
-            </ol>
-        </div>
-    </div>
-
     <div class="recipe_info">
-        <h2 id="last">Informações adicionais</h2><button>Esconder</button>
-        <p class="hideable">{{item.information}}</p>
+        <h2>Ingredientes</h2>
+        <button class="ingredient">ESCONDER</button>
     </div>
-
+        <ul class="ingredient_">
+            {% for ingredient in item.ingredients %}
+            <li>{{ingredient}}</li>
+            {% endfor %}
+        </ul>
+  
+    <div class="recipe_info">
+        <h2>Modo de preparo</h2>
+        <button class="preparation">ESCONDER</button>
+    </div>
+        <ul class="preparation_">
+            {% for step in item.preparation %}    
+            <li>{{step}}</li>
+            {% endfor%}
+        </ul>
+  
+    <div class="recipe_info">
+        <h2>Informações adicionais</h2>
+        <button class="information">ESCONDER</button>
+    </div>
+        <p class="information_">{{item.information}}</p>
+  
 </section>
 
 {% endblock %}

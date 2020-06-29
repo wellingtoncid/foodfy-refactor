@@ -11,17 +11,20 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     background-color: white;
     font-family: 'Roboto', sans-serif;
+    min-height: 100%;
+    position: relative;
 }
 
 footer {
   background: #eee;
   width: 100%;
-  padding: 20px;
-  bottom: 0;
+  padding: 23px 0;
+  left: 0;
   margin-top: 40px;
+  position: absolute;
 }
 
 footer p {
@@ -117,7 +120,7 @@ a.link.active {
     right: 90px;   
 }
 
-.banner .not-found-hat {
+.banner .notfound-hat {
   position: absolute;
   top: 39px;
   right: 125px;
