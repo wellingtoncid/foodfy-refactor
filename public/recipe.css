@@ -34,11 +34,12 @@
 
 .recipe button {
     width: fit-content;
-    height: 135%;
+    height: 125%;
     background-color: white;
     font-size: 12px;
     color: #999;
     width: -moz-fit-content;
+    outline: none;
 }
 
 .recipe button:hover{
@@ -58,7 +59,6 @@
     grid-template-areas: "t b";
     align-items: baseline;
     border: solid 1px white;
-    outline-style: none;
 }
 
 .recipe .recipe_info h2 {
@@ -94,6 +94,6 @@
     outline: none;
 }
 
-button {
+button .preparation, .ingredient, .information{
     outline: none;
 }
