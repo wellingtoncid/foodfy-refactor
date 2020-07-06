@@ -1,0 +1,74 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1580217593608-61931cefc821?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
+      "title": "Frango Frito",
+      "author": "Frita o frango",
+      "ingredients": [
+        "1kg de frango"
+      ],
+      "preparation": [
+        "Misture tudo. Reserve por 30 minutos. Coloque para assar em fogo alto."
+      ],
+      "information": "Bom apetite",
+      "created_at": 1594066839910
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1580217593608-61931cefc821?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
+      "title": "Frango Frito Crocante",
+      "author": "Frita o frango",
+      "ingredients": [
+        "1kg de frango"
+      ],
+      "preparation": [
+        "Misture tudo. Reserve por 30 minutos. Coloque para assar em fogo alto. Depois frita em oleo quente."
+      ],
+      "information": "Bom apetite",
+      "created_at": 1594066935582
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1579294087081-c485db6a7706?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "title": "Agua Molhada",
+      "author": "Walter Water",
+      "ingredients": [
+        "1 litro de agua"
+      ],
+      "preparation": [
+        "Molha a agua"
+      ],
+      "information": "Sirva-se",
+      "created_at": 1594070772074
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1580217593608-61931cefc821?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
+      "title": "Testando agua",
+      "author": "Aguando",
+      "ingredients": [
+        "1 litro de agua"
+      ],
+      "preparation": [
+        "Mistura tudo"
+      ],
+      "information": "Beba",
+      "created_at": 1594071153387
+    },
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1580217593608-61931cefc821?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
+      "title": "Testando agua",
+      "author": "Aguando",
+      "ingredients": [
+        "1 litro de agua,"
+      ],
+      "preparation": [
+        "Mistura tudo"
+      ],
+      "information": "Beba",
+      "created_at": 1594071243315
+    }
+  ]
+}

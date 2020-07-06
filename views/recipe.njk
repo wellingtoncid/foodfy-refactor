@@ -22,9 +22,9 @@
     
     <div class="recipe_info">
         <h2>Ingredientes</h2>
-        <button class="ingredient">ESCONDER</button>
+        <a class="show">Esconder</a>
     </div>
-        <ul class="ingredient_">
+        <ul class="info">
             {% for ingredient in item.ingredients %}
             <li>{{ingredient}}</li>
             {% endfor %}
@@ -32,9 +32,9 @@
   
     <div class="recipe_info">
         <h2>Modo de preparo</h2>
-        <button class="preparation">ESCONDER</button>
+        <a class="show">Esconder</a>
     </div>
-        <ul class="preparation_">
+        <ul class="info">
             {% for step in item.preparation %}    
             <li>{{step}}</li>
             {% endfor%}
@@ -42,9 +42,9 @@
   
     <div class="recipe_info">
         <h2>Informações adicionais</h2>
-        <button class="information">ESCONDER</button>
+        <a class="show">Esconder</a>
     </div>
-        <p class="information_">{{item.information}}</p>
+        <p class="info">{{item.information}}</p>
   
 </section>
 

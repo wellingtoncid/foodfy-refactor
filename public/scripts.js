@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.card')
+const cards = document.querySelectorAll(".card")
 
 for (let i = 0; i < cards.length; i++) {
     let recipeId = i
@@ -18,24 +18,52 @@ for (link of menus) {
     }
 }
 
-// button hide 
+// button show 
 
-const buttons = document.querySelectorAll('button');
+const show = document.querySelectorAll(".show")
+const info = document.querySelectorAll(".info")
 
-for (let button of buttons) {
-    button.addEventListener('click', function () {
-
-        const class_name = button.className.split(' ')[0];
-        const hide = document.querySelector(`.${class_name}_`);
-
-        if (button.classList.contains('hide')) {
-            button.textContent = 'ESCONDER';
-            button.classList.remove('hide');
-            hide.classList.remove('hide');
-        } else {
-            button.textContent = 'MOSTRAR';
-            button.classList.add('hide');
-            hide.classList.add('hide');
+for (let i = 0; i < show.length; i++) {
+    show[i].addEventListener("click", function () {
+        if (show[i].textContent == "Esconder") {
+            show[i].textContent = "Mostrar";
+            info[i].classList.add("hide");
+        }
+        else {
+            show[i].textContent = "Esconder";
+            info[i].classList.remove("hide");
         }
     })
 }
+// add ingredient
+
+function addIngredient() {
+
+    const ingredients = document.querySelector(".ingredients");
+    const fieldContainer = document.querySelectorAll(".ingredient");
+
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+    if (newField.children[0].value == "") return false;
+
+    newField.children[0].value = "";
+    ingredients.appendChild(newField);
+}
+
+document.querySelector(".add-ingredient").addEventListener("click", addIngredient);
+
+// add preparation
+
+function addPreparation() {
+    const preparations = document.querySelector(".preparations");
+    const fieldContainer = document.querySelectorAll(".preparation");
+
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+    if (newField.children[0].value == "") return false;
+
+    newField.children[0].value = "";
+    preparations.appendChild(newField);
+}
+
+document.querySelector(".add-prepare").addEventListener("click", addPreparation);
