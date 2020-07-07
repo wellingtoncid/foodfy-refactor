@@ -1,9 +1,25 @@
-{% extends 'layout.njk' %}
-
-{% block head %}
-    <title>Admin Foodfy</title>
-{% endblock %}
+{% extends "../layouts.njk" %}
 
 {% block content %}
 
-{% endblock %}
+    <main>
+        <div class="recipes">
+            <h1>Gerenciar receitas</h1>
+            <div class="cards">
+                {% for card in recipes %}
+                    <div class="card">
+                        <div>
+                            <img src="{{card.image}}" alt="{[card.title}}" srcset="">
+                        </div>
+                        <div>
+                            <h1>{{card.title}}</h1>
+                            <h2>por {{card.author}}</h2>
+                            <a href="/admin/recipes/{{card.id}}" class="link">Visualizar</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}

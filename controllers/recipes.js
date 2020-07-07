@@ -1,10 +1,53 @@
 const fs = require('fs')
 const data = require('../data.json')
 
+exports.index = function (req, res) {
+    for (recipe of data.recipes) {
+        recipe.id = data.recipes.indexOf(recipe);
+    }
 
+    return res.render("admin/recipes/index", { recipes: data.recipes });
+}
 
-exports.create = function (req,res) {
+exports.create = function (req, res) {
     return res.render('admin/recipes/create')
+}
+
+exports.show = function (req, res) {
+  
+    const { id } = req.params
+    
+    const foundRecipe = data.recipes.find(function (recipes) {
+        return recipes.id == id
+    })
+
+    if (!foundRecipe) return res.send('Page or recipe not found')
+
+    const recipes = {
+        ...foundRecipe,
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundRecipe.create)
+    }
+
+    return res.render('admin/recipes/show', { recipes })
+
+}
+
+exports.edit = function (req,res) {
+
+    const { id } = req.params
+
+    const foundRecipe = data.recipes.find(function (recipes) {
+        return recipes.id == id
+    })
+
+if (!foundRecipe) return res.send('Page or recipe not found')
+
+    const recipes = {
+        ...foundRecipe
+    }
+
+    return res.render('admin/recipes/edit', { recipes })
+
 }
 
 exports.post = function (req, res) {
@@ -12,11 +55,10 @@ exports.post = function (req, res) {
     const keys = Object.keys(req.body)
 
     for (key of keys) {
-            if (req.body[key] == '')
+        if (req.body[key] == '')
             return res.send('Please complete all fields.')
     }
 
-    let { image, title, author, ingredients, preparation, information } = req.body
 
     const created_at = Date.now()
     const id = Number(data.recipes.length + 1)
@@ -34,3 +76,4 @@ exports.post = function (req, res) {
 
     // return res.send(req.body)
 }
+
