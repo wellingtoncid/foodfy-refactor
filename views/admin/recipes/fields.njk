@@ -28,7 +28,7 @@
       {% for ingredient in recipes.ingredients %}
 
         <div class="ingredient">
-          <input type="text" name="ingredient[]" placeholder="Ingredientes" value="{{ingredient}}">
+          <input type="text" name="ingredients[]" placeholder="Ingredientes" value="{{ingredient}}">
         </div>
 
       {% endfor %}
@@ -74,7 +74,7 @@
   <div>Informações adicionais</div>
 
   <div class="information">
-    <textarea name="information" cols="30" rows="10">{{recipes.information}}</textarea>
+    <textarea name="information" cols="30" rows="10">{{ recipes.information }}</textarea>
   </div>
 
 </div>

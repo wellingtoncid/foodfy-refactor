@@ -18,6 +18,11 @@
     "nodemoon": "nodemon server.js",
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views'"
   },
+  "nodemonConfig": {
+    "ignore": [
+      "data.json"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wellingtoncid/foodfyapp.git"
