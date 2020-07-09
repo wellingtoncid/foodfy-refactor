@@ -8,16 +8,16 @@
 {% block content %}
  
     <section class="cards">
-        {% for item in items%}
+        {% for recipe in recipes %}
         <div class="card"> 
             <div class="card-image">
-                <img src="{{item.image}}" alt="Image {{item.title}}">
+                <img src="{{recipe.image}}" alt="Image {{recipe.title}}">
             </div>
             <div class="card-title">
-                <h1>{{item.title}}</h1>
+                <h1>{{recipe.title}}</h1>
             </div>
             <div class="card-author">
-                <p>{{item.title}}</p>
+                <p>por {{recipe.author}}</p>
             </div>
         </div>
         {% endfor %}
