@@ -1,4 +1,4 @@
-{% extends "../layouts.njk" %}
+{% extends "admin/layouts.njk" %}
 
 {% block content %}
 
@@ -6,15 +6,15 @@
         <div class="recipes">
             <h1>Gerenciar receitas</h1>
             <div class="cards">
-                {% for card in recipes %}
+                {% for recipe in recipes %}
                     <div class="card">
                         <div>
-                            <img src="{{card.image}}" alt="{[card.title}}">
+                            <img src="{{recipe.image}}" alt="{{recipe.title}}">
                         </div>
                         <div>
-                            <h1>{{card.title}}</h1>
-                            <h2>por {{card.author}}</h2>
-                            <a href="/admin/recipes/{{card.id}}" class="link">Visualizar</a>
+                            <h1>{{recipe.title}}</h1>
+                            <h2>por {{recipe.chef_name}}</h2>
+                            <a href="/admin/recipes/{{recipe.id}}" class="link">Visualizar</a>
                         </div>
                     </div>
                 {% endfor %}

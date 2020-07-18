@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% block head %}
+        {% block head %}
 
-      <title>Foodfy Admin</title>
+            <title>Foodfy Admin</title>
 
-    {% endblock %}
+        {% endblock %}
 
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/admin.css">
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/admin.css">
 
-  </head>
-  <body>
+    </head>
+    <body>
 
-    <div class="content-admin">
+        <div class="content-admin">
 
-      <header>
-        <a href="/admin/recipes" class="logo-admin"><img src="/assets/logo_admin.png" alt="Foodfy Admin" class="logo"></a>
-      </header>
+            <header class="navbar">
+                <nav class="menu">
+                    <a href="/admin/recipes" class="logo-admin"><img src="/assets/logo_admin.png" alt="Foodfy Admin" class="logo"></a>
+                    <a href="/admin/recipes" class="link">Receitas</a>
+                    <a href="/admin/chefs" class="link">Chefs</a>
+                </nav>
+            </header>
 
-      {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
 
-    </div>
+            <script src="/scripts.js"></script>
 
-  </body>
-  
+        </div>
+
+        {# <footer>
+            <p>Todos os direitos reservados, receitas Foodfy</p>
+        </footer> #}
+
+    </body>
+
 </html>

@@ -15,25 +15,21 @@ module.exports = {
             page,
             limit,
             offset,
-            callback(recipes) {
+            callback(chefs) {
 
                 const pagination = {
-                    total: Math.ceil(recipes[0].total / limit),
+                    total: Math.ceil(chefs[0].total / limit),
                     page
                 }
-                return res.render('admin/recipes/index', { recipes, pagination, filter })
+                return res.render('/admin/chefs/index', { chefs, pagination, filter })
             }
         }
 
-        Recipe.paginate(params)
+        Chef.paginate(params)
 
     },
     create(req, res) {
-
-        const results = Recipe.chefsSelectOption()
-        const options = results.rows
-
-        return res.render('admin/recipes/create', { options })
+        return res.render('/admin/chefs/create')
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -43,27 +39,27 @@ module.exports = {
                 return res.send('Please complete all fields.')
         }
 
-        Recipe.create(req.body, function (recipe) {
-            return res.redirect(`/admin/recipes/${recipe.id}`)
+        Chef.create(req.body, function (chef) {
+            return res.redirect(`/admin/chefs/${chef.id}`)
 
         })
 
     },
     show(req, res) {
-        Recipe.find(req.params.id, function (recipe) {
-            if (!recipe) return res.send("Recipe not found!")
+        Chef.find(req.params.id, function (chef) {
+            if (!chef) return res.send("Chef not found!")
 
-            recipe.created_at = date(recipe.created_at).format
+            chef.created_at = date(chef.created_at).format
             // created_at: new Intl.DateTimeFormat("pt-BR").format(foundRecipe.create)
 
-            return res.render("/admin/recipes/show", { recipe })
+            return res.render("/admin/chefs/show", { chef })
         })
     },
     edit(req, res) {
-        Recipe.find(req.params.id, function (recipe) {
-            if (!recipe) return res.send("Recipe not found!")
+        Recipe.find(req.params.id, function (chef) {
+            if (!chef) return res.send("Chef not found!")
 
-            return res.render("admin/recipes/edit", { recipe })
+            return res.render("admin/chefs/edit", { chef })
         })
     },
     put(req, res) {
@@ -74,14 +70,14 @@ module.exports = {
                 return res.send('Please complete all fields.')
         }
 
-        Recipe.update(req.body, function () {
-            return res.redirect(`/admin/recipes/${req.body.id}`)
+        Chef.update(req.body, function () {
+            return res.redirect(`/admin/chefs/${req.body.id}`)
         })
 
     },
     delete(req, res) {
-        Recipe.delete(req.body.id, function () {
-            return res.redirect(`/admin/recipes`)
+        Chef.delete(req.body.id, function () {
+            return res.redirect(`/admin/chefs`)
         })
     },
 }

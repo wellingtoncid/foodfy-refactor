@@ -11,7 +11,7 @@ module.exports = {
         if (search) {
 
             querySearch = `
-            WHERE recipes.title ILIKE '%${ search}%'
+            WHERE recipes.title ILIKE '%${ search }%'
             `
         }
 
@@ -24,7 +24,6 @@ module.exports = {
 
         return db.query(query)
     },
-
     create(data) {
 
         const query = `
@@ -52,7 +51,6 @@ module.exports = {
 
         return db.query(query, values)
     },
-
     find(id) {
 
         const query =
@@ -65,12 +63,10 @@ module.exports = {
 
         return db.query(query)
     },
-
     chefsSelectOption() {
 
         return db.query(`SELECT name, id FROM chefs`)
     },
-
     update(data) {
 
         const query = `
@@ -99,9 +95,43 @@ module.exports = {
         return db.query(query, values)
 
     },
-
     delete(id) {
 
         return db.query(`DELETE FROM recipes WHERE id = ${id}`)
     },
+    paginate(params) {
+        const { filter, limit, offset, callback } = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(
+                SELECT count(*) FROM recipes
+            ) AS total`
+
+        if (filter) {
+
+            filterQuery = `${query}
+            WHERE recipes.title ILIKE '%${filter}%'
+            OR recipes.ingredients ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM recipes
+                ${filterQuery}
+                ) as total`
+        }
+
+        query = `
+        SELECT recipes.*, ${totalQuery}
+        FROM recipes
+        ${filterQuery}
+        GROUP BY recipes.id LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], function (err, results) {
+            if (err) throw `Database error! ${err}`
+            callback(results.rows)
+        })
+
+    }
 }

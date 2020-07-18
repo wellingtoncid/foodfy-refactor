@@ -1,17 +1,26 @@
-const User = require('../models/User')
+
+const Recipe = require('../models/Recipe')
 
 module.exports = {
 
     index(req, res) {
-        return res.render('home')
+
+        // const results = Recipe.all(search = false)
+        // const recipes = results.rows
+
+        // let recipesPop = recipes.filter(function (recipe) {
+        //     return recipes.indexOf(recipe) < 6
+        // })
+
+        return res.render('users/home')
     },
 
     about(req, res) {
-        return res.render('about')
+        return res.render('users/about')
     },
 
     recipes(req, res) {
-        return res.render('recipes')
+        return res.render('users/recipes')
     },
 
     recipeIndex(req, res) {
@@ -22,7 +31,7 @@ module.exports = {
             return res.render('notfound')
         }
 
-        return res.render('recipe')
+        return res.render('users/recipe')
     }
 
 }
